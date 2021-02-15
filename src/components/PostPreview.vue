@@ -1,15 +1,17 @@
 <template>
-  <div class="post-list">
-    <hr class="line" />
-    <p class="date" v-html="post.date" />
+  <!-- <g-link :to="post.path" class="clickable-div"> -->
+  <article class="post-preview">
+    <!-- <hr class="line" /> -->
     <h3 class="title" v-html="post.title" />
+    <time class="date" v-html="post.date" />
     <p class="description" v-html="post.description" />
-    <b>{{ post.timeToRead }} min read</b> &nbsp;
+    <strong class="time-to-read">{{ post.timeToRead }} min read</strong> &nbsp;
     <g-link :to="post.path" class="read"
       >Read More
       <span class="visuallyhidden">about {{ post.title }}</span></g-link
     >
-  </div>
+  </article>
+  <!-- </g-link> -->
 </template>
 
 <script lang="ts">
@@ -21,14 +23,26 @@ export default class PostPreview extends Vue {
 }
 </script>
 
-<style>
-.line {
-  border: 0.5px solid #cdc8c5;
-  margin: 30px 0;
+<style scoped>
+.clickable-div {
+  text-decoration: none;
+  color: var(--text-color);
+  margin-bottom: 30px;
+  border: 1px solid black;
 }
-
+.post-preview {
+  margin: 15px 0 25px 0;
+}
 .date {
   font-weight: 300;
+  margin-bottom: 0;
+}
+.title {
+  display: inline;
+  margin: 0 8px 8px 0;
+}
+.description {
+  margin: 8px 0;
 }
 
 .read {
@@ -37,7 +51,6 @@ export default class PostPreview extends Vue {
   text-decoration: none;
   border: 2px dashed var(--border-color);
 }
-
 .visuallyhidden {
   position: absolute !important;
   width: 1px;
