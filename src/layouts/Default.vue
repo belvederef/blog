@@ -15,13 +15,16 @@
   </main>
 </template>
 
-<script>
-import Header from "./partials/Header";
-export default {
+<script lang="ts">
+import { Vue, Component } from "vue-property-decorator";
+import Header from "./partials/Header.vue";
+
+@Component({
   components: {
     Header,
   },
-};
+})
+export default class Default extends Vue {}
 </script>
 
 <style>

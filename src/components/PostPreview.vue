@@ -12,10 +12,13 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: ["post"],
-};
+<script lang="ts">
+import { Vue, Component, Prop } from "vue-property-decorator";
+
+@Component
+export default class PostPreview extends Vue {
+  @Prop() post!: any;
+}
 </script>
 
 <style>

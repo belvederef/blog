@@ -5,25 +5,51 @@
       <h2 v-html="$page.metadata.siteDescription" />
     </header>
     <section class="posts">
-      <PostList
-        v-for="edge in $page.allPost.edges"
-        :key="edge.node.id"
-        :post="edge.node"
-      />
+      <template v-for="[year, posts] in postsByYear">
+        <p :key="year">{{ year }}</p>
+        <PostPreview v-for="post in posts" :key="post.id" :post="post" />
+      </template>
     </section>
   </Layout>
 </template>
 
-<script>
-import PostList from "@/components/PostList";
-export default {
-  components: {
-    PostList,
-  },
+<script lang="ts">
+import { Vue, Component } from "vue-property-decorator";
+import PostPreview from "@/components/PostPreview.vue";
+
+@Component({
   metaInfo: {
-    title: "A simple blog",
+    title: "Belvedere's blog",
   },
-};
+  components: {
+    PostPreview,
+  },
+})
+export default class Index extends Vue {
+  get postsByYear() {
+    const postsByYear: {
+      [year: string]: Array<{ [key: string]: any }>;
+    } = this.$page.allPost.edges.reduce(
+      (
+        prev: { [year: string]: Array<{ [key: string]: any }> },
+        { node: post }: { node: { [key: string]: any } }
+      ) => {
+        const year = (post.date as string).split(" ").pop();
+        if (!year) throw Error(`Could not read year of post: ${post.title}`);
+        if (!Array.isArray(prev[year])) prev[year] = [];
+        prev[year].push(post);
+        return prev;
+      },
+      {}
+    );
+    return Object.entries(postsByYear).sort(
+      ([yearA, _], [yearB, __]) => +yearB - +yearA
+    );
+    // Object.keys(postsByYear).sort((a, b) => {
+    //   return b - a;
+    // });
+  }
+}
 </script>
 
 <page-query>

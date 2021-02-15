@@ -56,6 +56,9 @@ module.exports = {
         }),
       },
     },
+    {
+      use: "gridsome-plugin-typescript",
+    },
   ],
   transformers: {
     //Add markdown support to all file-system sources

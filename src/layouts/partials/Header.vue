@@ -9,7 +9,8 @@
 </template>
 
 <script>
-import ToggleTheme from "@/components/ToggleTheme";
+import ToggleTheme from "@/components/ToggleTheme.vue";
+
 export default {
   components: {
     ToggleTheme,

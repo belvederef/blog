@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "ES2020",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "noImplicitReturns": true,
+    "noImplicitAny": false,
+    "outDir": "./built/",
+    "sourceMap": true,
+    "strict": true,
+    "types": ["vue-meta"],
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "lib": ["ES2020"]
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"]
+}
