@@ -7,7 +7,8 @@
 module.exports = {
   siteName: "Belvedere's Blog",
   siteDescription: "A collection of projects and news from Francesco Belvedere",
-  siteUrl: "https://belvederef.github.io/blog/",
+  siteUrl: "https://belvederef.github.io",
+  pathPrefix: "/blog",
   templates: {
     Post: "/blog/:title",
   },
