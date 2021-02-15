@@ -41,6 +41,6 @@ query Post ($path: String!) {
 }
 
 .post-content {
-  font-size: 20px;
+  font-size: 18px;
 }
 </style>

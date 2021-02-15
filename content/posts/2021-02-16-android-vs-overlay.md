@@ -1,5 +1,5 @@
 ---
-title: "Android overlay filter"
-description: "Markdown post content stress test. See how your post content is being styled with Tailwind CSS."
+title: "Android Visual Snow Relief Overlay"
+description: "The mobile app is coming soon!"
 date: 2021-02-16
 ---
