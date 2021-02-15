@@ -10,7 +10,7 @@ module.exports = {
   siteUrl: "https://belvederef.github.io",
   pathPrefix: "/blog",
   templates: {
-    Post: "/blog/:title",
+    Post: "/posts/:title",
   },
   plugins: [
     {

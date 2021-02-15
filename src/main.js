@@ -5,10 +5,18 @@ import DefaultLayout from "~/layouts/Default.vue";
 import "prismjs/themes/prism.css";
 
 export default function(Vue, { router, head, isClient }) {
-  head.link.push({
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css?family=Stylish&display=swap",
-  }),
-    // Set default layout as a global component
-    Vue.component("Layout", DefaultLayout);
+  // head.link.push(
+  //   ...[
+  //     {
+  //       rel: "preconnect",
+  //       href: "https://fonts.gstatic.com",
+  //     },
+  //     {
+  //       rel: "stylesheet",
+  //       href: "https://fonts.googleapis.com/css2?family=Stylish&display=swap",
+  //     },
+  //   ]
+  // ),
+  // Set default layout as a global component
+  Vue.component("Layout", DefaultLayout);
 }
