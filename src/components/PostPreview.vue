@@ -1,17 +1,12 @@
 <template>
-  <!-- <g-link :to="post.path" class="clickable-div"> -->
-  <article class="post-preview">
-    <!-- <hr class="line" /> -->
-    <h3 class="title" v-html="post.title" />
-    <time class="date" v-html="post.date" />
-    <p class="description" v-html="post.description" />
-    <strong class="time-to-read">{{ post.timeToRead }} min read</strong> &nbsp;
-    <g-link :to="post.path" class="read"
-      >Read More
-      <span class="visuallyhidden">about {{ post.title }}</span></g-link
-    >
-  </article>
-  <!-- </g-link> -->
+  <g-link :to="post.path" class="clickable-div">
+    <article class="post-preview">
+      <h3 class="title" v-html="post.title" />
+      <time class="date" v-html="post.date" />
+      <p class="description" v-html="post.description" />
+      <em class="time-to-read">{{ post.timeToRead }} min read</em>
+    </article>
+  </g-link>
 </template>
 
 <script lang="ts">
@@ -24,11 +19,19 @@ export default class PostPreview extends Vue {
 </script>
 
 <style scoped>
-.clickable-div {
-  text-decoration: none;
-  color: var(--text-color);
-  margin-bottom: 30px;
-  border: 1px solid black;
+a.clickable-div {
+  color: inherit;
+  text-decoration: inherit;
+}
+a.clickable-div > article > h3 {
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+a.clickable-div:hover > article > h3 {
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  border-bottom: 2px solid var(--accent-color);
 }
 .post-preview {
   margin: 15px 0 25px 0;
@@ -43,13 +46,6 @@ export default class PostPreview extends Vue {
 }
 .description {
   margin: 8px 0;
-}
-
-.read {
-  padding: 7px;
-  color: var(--text-color);
-  text-decoration: none;
-  border: 2px dashed var(--accent-color);
 }
 .visuallyhidden {
   position: absolute !important;
