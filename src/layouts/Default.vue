@@ -9,8 +9,8 @@
           >Francesco Belvedere</a
         >
       </p>
-      <a target="_blank" href="/sitemap.xml">Sitemap</a>
-      <a target="_blank" href="/feed.xml">RSS Feed</a>
+      <!-- <a target="_blank" href="/sitemap.xml">Sitemap</a>
+      <a target="_blank" href="/feed.xml">RSS Feed</a> -->
     </div>
   </main>
 </template>

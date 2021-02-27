@@ -23,41 +23,44 @@ module.exports = {
     {
       use: "@gridsome/plugin-sitemap",
       options: {
+        config: {
+          "/blog/*": {},
+        },
         cacheTime: 600000, // default
       },
     },
-    {
-      use: "gridsome-plugin-feed",
-      options: {
-        contentTypes: ["Post"],
-        feedOptions: {
-          title: "Belvedere's Blog",
-          description:
-            "A collection of projects and news from Francesco Belvedere",
-        },
-        rss: {
-          enabled: true,
-          output: "/feed.xml",
-        },
-        atom: {
-          enabled: false,
-          output: "/feed.atom",
-        },
-        json: {
-          enabled: false,
-          output: "/feed.json",
-        },
-        maxItems: 25,
-        htmlFields: ["description", "content"],
-        enforceTrailingSlashes: false,
-        filterNodes: (node) => true,
-        nodeToFeedItem: (node) => ({
-          title: node.title,
-          date: node.date || node.fields.date,
-          content: node.content,
-        }),
-      },
-    },
+    // {
+    //   use: "gridsome-plugin-feed",
+    //   options: {
+    //     contentTypes: ["Post"],
+    //     feedOptions: {
+    //       title: "Belvedere's Blog",
+    //       description:
+    //         "A collection of projects and news from Francesco Belvedere",
+    //     },
+    //     rss: {
+    //       enabled: true,
+    //       output: "/feed.xml",
+    //     },
+    //     atom: {
+    //       enabled: false,
+    //       output: "/feed.atom",
+    //     },
+    //     json: {
+    //       enabled: false,
+    //       output: "/feed.json",
+    //     },
+    //     maxItems: 25,
+    //     htmlFields: ["description", "content"],
+    //     enforceTrailingSlashes: false,
+    //     filterNodes: (node) => true,
+    //     nodeToFeedItem: (node) => ({
+    //       title: node.title,
+    //       date: node.date || node.fields.date,
+    //       content: node.content,
+    //     }),
+    //   },
+    // },
     {
       use: "gridsome-plugin-typescript",
     },
