@@ -109,7 +109,7 @@ export default {
 
 .toggle-theme:hover {
   opacity: 0.8;
-  color: var(--border-color);
+  color: var(--accent-color);
 }
 
 .toggle-theme:focus {

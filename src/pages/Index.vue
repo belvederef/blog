@@ -4,10 +4,17 @@
       <h1 v-html="$page.metadata.siteName" />
       <h2 v-html="$page.metadata.siteDescription" />
     </header>
+
     <section class="posts">
+      <h3 class="post-header">Featured</h3>
+      <PostPreview v-for="post in featuredPosts" :key="post.id" :post="post" />
+    </section>
+
+    <section class="posts">
+      <h3 class="post-header">Latest</h3>
       <template v-for="[year, posts] in postsByYear">
         <div :key="year">
-          <h3 class="year">{{ year }}</h3>
+          <h4 class="year">{{ year }}</h4>
           <hr class="line" />
         </div>
         <PostPreview v-for="post in posts" :key="post.id" :post="post" />
@@ -29,19 +36,26 @@ import PostPreview from "@/components/PostPreview.vue";
   },
 })
 export default class Index extends Vue {
+  get featuredPosts() {
+    return (this as any).$page.allPost.edges
+      .filter(
+        ({ node: post }: { node: { [key: string]: any } }) =>
+          post.featured === true
+      )
+      .map(({ node: post }) => ({ ...post, date: post.fullDate }));
+  }
   get postsByYear() {
     const postsByYear: {
       [year: string]: Array<{ [key: string]: any }>;
-      // @ts-ignore
-    } = this.$page.allPost.edges.reduce(
+    } = (this as any).$page.allPost.edges.reduce(
       (
         prev: { [year: string]: Array<{ [key: string]: any }> },
         { node: post }: { node: { [key: string]: any } }
       ) => {
-        const year = (post._date as string).split(" ").pop();
+        const year = new Date(post.isoDate).getFullYear().toString();
         if (!year) throw Error(`Could not read year of post: ${post.title}`);
         if (!Array.isArray(prev[year])) prev[year] = [];
-        prev[year].push(post);
+        prev[year].push({ ...post, date: post.shortDate });
         return prev;
       },
       {}
@@ -67,12 +81,13 @@ query {
         title
         timeToRead
         description
-        date (format: "D MMM")
-        _date: date (format: "D MMMM YYYY")
+        isoDate: date
+        shortDate: date (format: "D MMM")
+        fullDate: date (format: "D MMM YYYY")
         path
+        featured
       }
     }
-
   }
 }
 </page-query>
@@ -95,6 +110,16 @@ query {
 .header h2 {
   font-weight: 200;
   font-size: 35px;
+}
+.post-header {
+  color: #333;
+  display: inline-block;
+  margin: auto;
+  padding: 2px 5px;
+  background-color: var(--accent-color);
+}
+.posts {
+  margin-bottom: 100px;
 }
 
 .year {

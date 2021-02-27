@@ -4,7 +4,7 @@ declare module "*.vue" {
 
   module "vue/types/vue" {
     interface Vue {
-      $page: any;
+      $page: { [key: string]: any };
     }
   }
 }

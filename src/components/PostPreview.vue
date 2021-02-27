@@ -49,7 +49,7 @@ export default class PostPreview extends Vue {
   padding: 7px;
   color: var(--text-color);
   text-decoration: none;
-  border: 2px dashed var(--border-color);
+  border: 2px dashed var(--accent-color);
 }
 .visuallyhidden {
   position: absolute !important;

@@ -30,20 +30,20 @@ export default class Default extends Vue {}
 <style>
 :root {
   --text-color: #333;
-  --border-color: #fecd43;
+  --accent-color: #fecd43;
   --bkg-color: white;
   --line-color: #cdc8c5;
 }
 :root [data-theme="sepia"] {
   --text-color: #433422;
-  --border-color: #00a672;
+  --accent-color: #00a672;
   --bkg-color: #f1e7d0;
   --line-color: #00a672;
 }
 
 :root [data-theme="dark"] {
   --text-color: #ffffff;
-  --border-color: #fecd43;
+  --accent-color: #fecd43;
   --bkg-color: #030200;
   --line-color: #fecd43;
 }
@@ -53,7 +53,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.5;
-  border: 15px solid var(--border-color);
+  border: 15px solid var(--accent-color);
   min-height: 100vh;
   background-color: var(--bkg-color);
   color: var(--text-color);
@@ -74,7 +74,7 @@ body {
 }
 
 .link {
-  border: 2px dashed var(--border-color);
+  border: 2px dashed var(--accent-color);
   padding: 7px;
   color: var(--text-color);
   text-decoration: none;
