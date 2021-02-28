@@ -5,6 +5,7 @@ declare module "*.vue" {
   module "vue/types/vue" {
     interface Vue {
       $page: { [key: string]: any };
+      $disqus: any;
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "module": "ES2020",
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
@@ -15,7 +15,7 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "lib": ["ES2020"]
+    "lib": ["ES2020", "DOM"]
   },
   "include": ["./src/**/*"],
   "exclude": ["node_modules"]

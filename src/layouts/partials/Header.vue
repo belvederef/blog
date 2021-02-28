@@ -8,14 +8,16 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { Vue, Component } from "vue-property-decorator";
 import ToggleTheme from "@/components/ToggleTheme.vue";
 
-export default {
+@Component({
   components: {
     ToggleTheme,
   },
-};
+})
+export default class Header extends Vue {}
 </script>
 
 <style>

@@ -68,35 +68,33 @@
   </a>
 </template>
 
-<script>
+<script lang="ts">
+import { Vue, Component } from "vue-property-decorator";
+
 let themes = ["light", "dark", "sepia"];
-export default {
-  data() {
-    return {
-      theme: "light",
-    };
-  },
-  computed: {
-    nextTheme() {
-      const currentIndex = themes.indexOf(this.theme);
-      const nextIndex = (currentIndex + 1) % themes.length;
-      return themes[nextIndex];
-    },
-  },
-  methods: {
-    toggleTheme() {
-      const currentIndex = themes.indexOf(this.theme);
-      const nextIndex = (currentIndex + 1) % themes.length;
-      window.__setPreferredTheme(themes[nextIndex]);
-      this.theme = themes[nextIndex];
-      this.$disqus && this.$disqus.reset();
-    },
-  },
+
+@Component
+export default class ToggleTheme extends Vue {
+  theme = "light";
+
+  get nextTheme() {
+    const currentIndex = themes.indexOf(this.theme);
+    const nextIndex = (currentIndex + 1) % themes.length;
+    return themes[nextIndex];
+  }
+  toggleTheme() {
+    const currentIndex = themes.indexOf(this.theme);
+    const nextIndex = (currentIndex + 1) % themes.length;
+    window.__setPreferredTheme(themes[nextIndex]);
+    this.theme = themes[nextIndex];
+    this.$disqus && this.$disqus.reset();
+  }
+
   async mounted() {
     // set default
     if (typeof window.__theme !== "undefined") this.theme = window.__theme;
-  },
-};
+  }
+}
 </script>
 
 <style>
