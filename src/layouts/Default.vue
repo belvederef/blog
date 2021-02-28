@@ -5,8 +5,8 @@
     <div class="footer">
       <p>
         Made with ❤️ by
-        <a class="link" href="https://github.com/belvederef"
-          >Francesco Belvedere</a
+        <g-link class="link" to="https://github.com/belvederef"
+          >Francesco Belvedere</g-link
         >
       </p>
       <!-- <a target="_blank" href="/sitemap.xml">Sitemap</a>
