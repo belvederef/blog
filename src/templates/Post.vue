@@ -11,6 +11,7 @@
     <div class="post-content">
       <p v-html="$page.post.content" />
     </div>
+    <Disqus shortname="blog" :identifier="$page.post.title" />
   </Layout>
 </template>
 
