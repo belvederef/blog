@@ -33,12 +33,14 @@ export default class Default extends Vue {}
   --accent-color: #fecd43;
   --bkg-color: white;
   --line-color: #cdc8c5;
+  --link-color: #006a9a;
 }
 :root [data-theme="sepia"] {
   --text-color: #433422;
   --accent-color: #00a672;
   --bkg-color: #f1e7d0;
   --line-color: #00a672;
+  --link-color: #006a9a;
 }
 
 :root [data-theme="dark"] {
@@ -46,6 +48,7 @@ export default class Default extends Vue {}
   --accent-color: #fecd43;
   --bkg-color: #030200;
   --line-color: #fecd43;
+  --link-color: #85d9ff;
 }
 body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -58,6 +61,16 @@ body {
   background-color: var(--bkg-color);
   color: var(--text-color);
   transition: background 0.3s;
+}
+
+a {
+  -webkit-transition: 0.15s ease;
+  transition: 0.15s ease;
+  text-decoration: underline solid var(--accent-color) 2px;
+  color: var(--link-color);
+}
+a:hover {
+  opacity: 0.66;
 }
 
 .layout {
