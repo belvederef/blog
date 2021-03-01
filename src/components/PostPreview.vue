@@ -1,5 +1,9 @@
 <template>
-  <g-link :to="post.path" class="clickable-div">
+  <g-link
+    :to="post.path"
+    class="clickable-div"
+    :aria-label="`Link to article '${post.title}'`"
+  >
     <article class="post-preview">
       <h3 class="title" v-html="post.title" />
       <time class="date" v-html="post.date" />
