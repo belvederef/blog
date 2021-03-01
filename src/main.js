@@ -19,6 +19,6 @@ export default function(Vue, { router, head, isClient }) {
   //   ]
   // ),
   // Set default layout as a global component
-  Vue.use(VueDisqus);
   Vue.component("Layout", DefaultLayout);
+  Vue.use(VueDisqus);
 }
