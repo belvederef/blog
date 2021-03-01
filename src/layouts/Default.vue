@@ -5,9 +5,7 @@
     <div class="footer">
       <p>
         Made with ❤️ by
-        <g-link class="link" to="https://github.com/belvederef"
-          >Francesco Belvedere</g-link
-        >
+        <g-link to="https://github.com/belvederef">Francesco Belvedere</g-link>
       </p>
       <!-- <a target="_blank" href="/sitemap.xml">Sitemap</a>
       <a target="_blank" href="/feed.xml">RSS Feed</a> -->
@@ -86,7 +84,7 @@ a:hover {
   font-size: 1em;
 }
 
-.link {
+.dashed-link {
   border: 2px dashed var(--accent-color);
   padding: 7px;
   color: var(--text-color);

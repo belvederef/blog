@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <br />
-    <g-link to="/" class="link"> &larr; Go Back</g-link>
+    <g-link to="/" class="dashed-link"> &larr; Go Back</g-link>
     <div class="post-title">
       <h1>{{ $page.post.title }}</h1>
       <p class="post-date">
@@ -11,7 +11,11 @@
     <div class="post-content">
       <p v-html="$page.post.content" />
     </div>
-    <Disqus shortname="blog" :identifier="$page.post.title" />
+    <Disqus
+      class="disqus"
+      shortname="belvederef-blog"
+      :identifier="$page.post.path"
+    />
   </Layout>
 </template>
 
@@ -43,5 +47,8 @@ query Post ($path: String!) {
 
 .post-content {
   font-size: 18px;
+}
+.disqus {
+  margin-top: 90px;
 }
 </style>
