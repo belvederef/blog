@@ -11,11 +11,7 @@
     <div class="post-content">
       <p v-html="$page.post.content" />
     </div>
-    <Disqus
-      class="disqus"
-      shortname="belvederef-blog"
-      :identifier="$page.post.path"
-    />
+    <!-- <Disqus class="disqus" :identifier="$page.post.path" /> -->
   </Layout>
 </template>
 
