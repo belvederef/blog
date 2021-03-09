@@ -30,6 +30,10 @@ The project can be found at https://github.com/belvederef/visual-snow-relief-ove
 
 [Here is a screenshot](https://i.imgur.com/vQPtwxU.png) of one of the filter types in action.
 
+### Update
+
+Visual Snow Relief Overlay goes mobile! Read the [full article](/posts/android-visual-snow-relief-overlay/).
+
 ## The Response
 
 Since the [original post](https://www.reddit.com/r/visualsnow/comments/l22xta/i_created_an_opensource_vs_relief_overlay_app/) made on the Reddit, I have received overwhelming feedback. Many affirm that using the overlay helps them focus when reading, and reduces eye strain and migraine symptoms!
