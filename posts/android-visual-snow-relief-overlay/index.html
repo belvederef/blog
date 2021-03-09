@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Belvedere&#x27;s Blog - Belvedere&#x27;s Blog</title><meta name="gridsome:hash" content="4effacfdcc6ec953c6c71b331c3beac6a5fcc7d6"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.23"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="A collection of projects and news from Francesco Belvedere"><link rel="preload" href="/blog/assets/css/0.styles.a119b404.css" as="style"><link rel="preload" href="/blog/assets/js/app.e0df5ef3.js" as="script"><link rel="preload" href="/blog/assets/js/page--src--templates--post-vue.1ceb6803.js" as="script"><link rel="prefetch" href="/blog/assets/js/page--node-modules--gridsome--app--pages--404-vue.ba84d92e.js"><link rel="prefetch" href="/blog/assets/js/page--src--pages--index-vue.7f53f2e5.js"><link rel="stylesheet" href="/blog/assets/css/0.styles.a119b404.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon-16x16.png">
+    <link rel="manifest" href="/blog/site.webmanifest">
+    <link rel="mask-icon" href="/blog/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Stylish&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Stylish&display=swap">
+    </noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute("data-theme", newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem("theme");
+        } catch (err) {}
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem("theme", newTheme);
+          } catch (err) {}
+        };
+
+        var darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? "dark" : "light");
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? "dark" : "light"));
+      })();
+    </script>
+
+    <main role="main" data-server-rendered="true" id="app" class="layout"><div><header class="layout-header"><nav class="nav"><a role="button" aria-label="Toggle dark" title="Toggle dark" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></a></nav></header></div><br><a href="/blog/" class="dashed-link active"> ← Go Back</a><div class="post-title"><h1>Android Visual Snow Relief Overlay</h1><p class="post-date">
+      9 March 2021 | 2 min read
+    </p></div><div class="post-content"><p><h2 id="introduction-and-updates">Introduction and updates</h2>
+<p>The original <a href="https://www.reddit.com/r/visualsnow/comments/l22xta/i_created_an_opensource_vs_relief_overlay_app/" target="_blank" rel="nofollow noopener noreferrer">Visual Snow Relief Overlay app for desktop</a> has been a success. I was not expecting such a positive response: a large number of people have reported how the overlay helps them focus on reading, reduces eye strain, and prevents migraine that usually appears when looking at a screen. Many described it as if the continued exposure to the artificial static "cancels out" their real static. However, the benefits seem to only be present while using the app, from what reported so far. More data will have to be collected to understand if any long term improvement is achieved.</p>
+<p>Regardless, this is an amazing result. Many people experience more severe Visual Snow (VS) symptoms when looking at a screen, and we all are spending ever more time on screens during the current pandemic. Yet, many of you have said you are not spending any time sitting at your desktop anymore.</p>
+<p>Smartphones have taken over over screen time thanks to their simplicity and portability. This is why I decided to dedicate my efforts to creating a mobile app able to replicate the benefits of the desktop version.</p>
+<h2 id="visual-snow-relief-overlay-goes-mobile">Visual Snow Relief Overlay goes mobile</h2>
+<p>The app generates an overlay that sits on your screen and lets you interact with anything underneath it, so you can keep using your favourite apps. You can set the opacity and choose from several static noise textures, so you can experiment which gives the best result.
+At the moment, system elements like notification panel, navigation bar, settings page etc. are not covered. This can be fixed in future releases but it was not deemed a priority since we do not spend much time looking at these. Here is what the overlay looks when reading a web page:</p>
+<img src="https://i.imgur.com/OE614hH.png" alt="Screenshot of the app in use" style="display: block; max-width: 300px; margin: 0 auto" />
+<p>The app is available on Android, you can find it on the <a href="https://play.google.com/store/apps/details?id=eu.belvederef.vs_relief_overlay" target="_blank" rel="nofollow noopener noreferrer">Play store</a>. If we find it effective, the iOS version will be created too.</p>
+<h2 id="more-updates">More updates</h2>
+<p><a href="http://eepurl.com/hr-9zP" target="_blank" rel="nofollow noopener noreferrer">Join the newsletter</a> I set up if you want to get updates directly. I will still post updates here and on Reddit but I am aware not everyone can keep up with the number of posts. I will only send a newsletter when there are important updates.</p>
+<p>I was not contacted by VSI yet, so I will try to get in touch myself in the following weeks. In the meantime, I want to remind everyone to join the official research at <a href="https://visualsnowproject.com/" target="_blank" rel="nofollow noopener noreferrer">https://visualsnowproject.com/</a>.</p>
+<hr>
+<p>I wanted to really thank all the people that have contributed to the project so far. Your fantastic support allowed me to publish this app, which would probably not exist otherwise.</p>
+<p>If you appreciate what I am doing and find the mobile app helpful, please <a href="https://ko-fi.com/belvederef" target="_blank" rel="nofollow noopener noreferrer">contribute to the project</a>. Without your support, I will not be able to dedicate as much time as I would like to create these tools for the community.</p>
+</p></div><div id="disqus_thread" class="disqus" style="min-height:200px;"></div><div class="footer"><p>
+      Made with ❤️ by
+      <a href="https://github.com/belvederef" target="_blank" rel="noopener">Francesco Belvedere</a></p></div></main> <script>window.__INITIAL_STATE__={"data":{"post":{"id":"62c022beb78009973bba78686584f6f2","title":"Android Visual Snow Relief Overlay","content":"\u003Ch2 id=\"introduction-and-updates\"\u003EIntroduction and updates\u003C\u002Fh2\u003E\n\u003Cp\u003EThe original \u003Ca href=\"https:\u002F\u002Fwww.reddit.com\u002Fr\u002Fvisualsnow\u002Fcomments\u002Fl22xta\u002Fi_created_an_opensource_vs_relief_overlay_app\u002F\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"\u003EVisual Snow Relief Overlay app for desktop\u003C\u002Fa\u003E has been a success. I was not expecting such a positive response: a large number of people have reported how the overlay helps them focus on reading, reduces eye strain, and prevents migraine that usually appears when looking at a screen. Many described it as if the continued exposure to the artificial static \"cancels out\" their real static. However, the benefits seem to only be present while using the app, from what reported so far. More data will have to be collected to understand if any long term improvement is achieved.\u003C\u002Fp\u003E\n\u003Cp\u003ERegardless, this is an amazing result. Many people experience more severe Visual Snow (VS) symptoms when looking at a screen, and we all are spending ever more time on screens during the current pandemic. Yet, many of you have said you are not spending any time sitting at your desktop anymore.\u003C\u002Fp\u003E\n\u003Cp\u003ESmartphones have taken over over screen time thanks to their simplicity and portability. This is why I decided to dedicate my efforts to creating a mobile app able to replicate the benefits of the desktop version.\u003C\u002Fp\u003E\n\u003Ch2 id=\"visual-snow-relief-overlay-goes-mobile\"\u003EVisual Snow Relief Overlay goes mobile\u003C\u002Fh2\u003E\n\u003Cp\u003EThe app generates an overlay that sits on your screen and lets you interact with anything underneath it, so you can keep using your favourite apps. You can set the opacity and choose from several static noise textures, so you can experiment which gives the best result.\nAt the moment, system elements like notification panel, navigation bar, settings page etc. are not covered. This can be fixed in future releases but it was not deemed a priority since we do not spend much time looking at these. Here is what the overlay looks when reading a web page:\u003C\u002Fp\u003E\n\u003Cimg src=\"https:\u002F\u002Fi.imgur.com\u002FOE614hH.png\" alt=\"Screenshot of the app in use\" style=\"display: block; max-width: 300px; margin: 0 auto\" \u002F\u003E\n\u003Cp\u003EThe app is available on Android, you can find it on the \u003Ca href=\"https:\u002F\u002Fplay.google.com\u002Fstore\u002Fapps\u002Fdetails?id=eu.belvederef.vs_relief_overlay\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"\u003EPlay store\u003C\u002Fa\u003E. If we find it effective, the iOS version will be created too.\u003C\u002Fp\u003E\n\u003Ch2 id=\"more-updates\"\u003EMore updates\u003C\u002Fh2\u003E\n\u003Cp\u003E\u003Ca href=\"http:\u002F\u002Feepurl.com\u002Fhr-9zP\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"\u003EJoin the newsletter\u003C\u002Fa\u003E I set up if you want to get updates directly. I will still post updates here and on Reddit but I am aware not everyone can keep up with the number of posts. I will only send a newsletter when there are important updates.\u003C\u002Fp\u003E\n\u003Cp\u003EI was not contacted by VSI yet, so I will try to get in touch myself in the following weeks. In the meantime, I want to remind everyone to join the official research at \u003Ca href=\"https:\u002F\u002Fvisualsnowproject.com\u002F\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"\u003Ehttps:\u002F\u002Fvisualsnowproject.com\u002F\u003C\u002Fa\u003E.\u003C\u002Fp\u003E\n\u003Chr\u003E\n\u003Cp\u003EI wanted to really thank all the people that have contributed to the project so far. Your fantastic support allowed me to publish this app, which would probably not exist otherwise.\u003C\u002Fp\u003E\n\u003Cp\u003EIf you appreciate what I am doing and find the mobile app helpful, please \u003Ca href=\"https:\u002F\u002Fko-fi.com\u002Fbelvederef\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"\u003Econtribute to the project\u003C\u002Fa\u003E. Without your support, I will not be able to dedicate as much time as I would like to create these tools for the community.\u003C\u002Fp\u003E\n","date":"9 March 2021","timeToRead":2}},"context":{}};(function(){var s;(s=document.currentScript||document.scripts[document.scripts.length-1]).parentNode.removeChild(s);}());</script><script src="/blog/assets/js/app.e0df5ef3.js" defer></script><script src="/blog/assets/js/page--src--templates--post-vue.1ceb6803.js" defer></script>
+  </body>
+</html>
