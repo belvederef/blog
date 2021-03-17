@@ -29,7 +29,7 @@ import PostPreview from "@/components/PostPreview.vue";
 
 @Component({
   metaInfo: {
-    title: "Belvedere's blog",
+    title: "Homepage",
   },
   components: {
     PostPreview,
