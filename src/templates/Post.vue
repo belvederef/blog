@@ -8,9 +8,7 @@
         {{ $page.post.date }} | {{ $page.post.timeToRead }} min read
       </p>
     </div>
-    <div class="post-content">
-      <p v-html="$page.post.content" />
-    </div>
+    <div class="post-content" v-html="$page.post.content"></div>
     <Disqus
       class="disqus"
       shortname="belvederef-blog"
