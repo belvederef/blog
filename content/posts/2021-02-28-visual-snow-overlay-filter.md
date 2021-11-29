@@ -32,7 +32,7 @@ The project can be found at https://github.com/belvederef/visual-snow-relief-ove
 
 ### Update
 
-Visual Snow Relief Overlay goes mobile! Read the [full article](/posts/android-visual-snow-relief-overlay/).
+Visual Snow Relief Overlay goes mobile! Read the [full article](/blog/posts/android-visual-snow-relief-overlay/).
 
 ## The Response
 
@@ -44,7 +44,7 @@ The idea seems to be working amazingly, and I am planning to release a mobile ve
 
 We can all contribute to the research! I need all the feedback you can give to document the effects of the app and improve it, as well as understanding if it provides benefits in the long run.
 
-Moreover, I set up a link for [donations](https://ko-fi.com/belvederef). An any project, anything I create incurs some costs, that I am mostly covering on my own. Any contribution sustains my work and allows me to improve and develop more tools for the Visual Snow community.
+Moreover, I set up a link for [donations](https://ko-fi.com/belvederef). As any project, anything I create incurs some costs, that I am mostly covering on my own. Any contribution sustains my work and allows me to improve and develop more tools for the Visual Snow community.
 
 You can also:
 
