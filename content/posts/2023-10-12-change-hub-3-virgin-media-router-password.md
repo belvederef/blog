@@ -1,3 +1,10 @@
+---
+title: "How to set any password to your Virgin Media Hub 3.0 router"
+description: "Check out these instructions to set any password you like on your Virgin Media Hub 3.0 router. There are various limitations VM enforces on passwords: if you want to change broadband provider but not set up WiFi access to all your devices again, this will be useful for you."
+date: 2023-10-12
+featured: false
+---
+
 # How to set any password to your Virgin Media Hub 3.0 router
 
 1. Log in to your router admin panel by reaching `http://192.168.0.1/`.
